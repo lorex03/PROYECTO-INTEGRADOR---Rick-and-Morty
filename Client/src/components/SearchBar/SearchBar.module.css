@@ -1,0 +1,11 @@
+.search{
+    display:flex ;
+   justify-content: center;
+  
+width: fit-content;
+
+}
+
+.newButton{
+    background-color: red;
+}

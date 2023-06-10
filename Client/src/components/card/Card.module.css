@@ -1,0 +1,56 @@
+
+.target{
+   
+    padding-top: 0;
+   background-size:cover;
+flex-direction: column;
+display: flex;
+text-emphasis-color: white;
+box-shadow: 5px 11px 84px 39px rgba(255, 252, 252, 0.75);
+text-shadow: 1px 2px 0px rgba(255, 255, 255, 0.6);
+border-radius: 30px;
+
+}
+
+h2{
+text-shadow:1px 2px #999 ;
+color:white;
+
+}
+h2.hover{
+   transform: scale(1.1);
+   transition: transform 1s;
+   
+}      
+
+img{
+   visibility: 1;
+   transition: visibility .5s ease-in-out;
+   display:flex;
+    width: auto;
+    height: auto;
+
+ border-top: 10;
+
+}
+img:hover{
+   visibility: 0.5;
+}
+
+
+
+.name{
+
+position: relative;
+width:500px;
+}
+
+.species{
+   position:relative;
+   width:600px;
+}
+
+.gender{
+   position: relative;
+   width: 700px;
+}
