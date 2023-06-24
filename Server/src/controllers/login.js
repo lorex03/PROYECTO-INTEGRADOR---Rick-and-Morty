@@ -1,24 +1,32 @@
-const users = require('../utils/users.js')
+const {User} = require('../DB_connection');
 
+const login = async (req,res) =>{
+    try {
+        const {email,password} =req.query;
+        
+        if(!email || !password){
+         return res.status(400).json({message:"Faltan datos"})
+     }     
+     const [user] = await User.findOne({
+         where: {
+             email: email,
+         }
+     });
 
-const login=((req,res) => {
-const {email,password}=req.query
-
-const userValid=users.find((user)=> user.email === email &&
-user.password === password)
-
-return userValid ?  
-res.status(200).json({access:true})
-: res.status(404).json({access:true})
-//utilizo ternarios , es otra forma en vez de usar if
-})
-
-
-
-
-
-
-
-module.exports={
-    login
-};
+     if(!user)
+      return res.status(404).json({message:"Usuario no encontrado"})
+     
+     if(user.password != password)
+        return res.status(403).json({message:"Contraseña incorrecta"})
+    
+        return res.status(200).json({
+            access: true,
+         });
+        
+    
+    } catch (error) {
+          return res.status(500).json(error.message);   
+         }
+     
+        }
+module.exports = login;

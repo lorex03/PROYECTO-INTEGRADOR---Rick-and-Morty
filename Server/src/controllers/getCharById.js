@@ -25,7 +25,7 @@ const getCharById = async(req, res) => {
     }
 }
 
-
+//forma que realize al principio sin utilizar el async await,
 // const getCharById = (req, res) => {
 //     const { id } = req.params
 //     axios.get(URL+id).then((response)=>{
